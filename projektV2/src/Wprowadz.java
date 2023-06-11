@@ -30,20 +30,6 @@ public class Wprowadz {
         }while (zmienna==-7954.873);
         return zmienna;
     }
-    public long wypisz_long(){
-        long zmienna =-594783;
-        do{
-            Scanner sa=new Scanner(System.in);
-            try {
-                zmienna = sa.nextLong();
-            }
-            catch (InputMismatchException e){
-                System.out.println("Niepoprawnie podana wartosc, sprobuj ponownie");
-                sa.nextLine();
-            }
-        }while (zmienna==-594783);
-        return zmienna;
-    }
     public String wypisz_String(){
         String zmienna = null;
         do{

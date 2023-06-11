@@ -19,7 +19,7 @@ public class Main {
         }
         while (sa.hasNextLine()){
             String dane[]=sa.nextLine().split(" ");
-            klienci.add(new Klient(Long.parseLong(dane[0]),dane[1],dane[2]));
+            klienci.add(new Klient(dane[0],dane[1],dane[2]));
         }
         sa.close();
         ArrayList<PojazdyOsobowe> pojazdy_osobowe = new ArrayList();
@@ -67,7 +67,7 @@ public class Main {
         }
         while (sa.hasNextLine()){
             String dane[]=sa.nextLine().split(" ");
-            wypozyczenia.add(new Wypozyczenia(Long.parseLong(dane[0]),dane[1],formatter.parse(dane[2]),Integer.parseInt(dane[3]),dane[4]));
+            wypozyczenia.add(new Wypozyczenia(dane[0],dane[1],formatter.parse(dane[2]),Integer.parseInt(dane[3]),dane[4]));
         }
         sa.close();
         String opcja=null;
@@ -81,11 +81,11 @@ public class Main {
                     switch (opcja2){
                         case 1:
                             int i;
-                            long pesel;
+                            String pesel;
                             do {
                                 i=0;
                                 System.out.println("Podaj pesel klienta");
-                                pesel = wprowadz.wypisz_long();
+                                pesel = wprowadz.wypisz_String();
                                 for (int j=0;j< klienci.size();j++){
                                     if (klienci.get(j).getPesel()==pesel){
                                         i=1;
@@ -103,7 +103,7 @@ public class Main {
                             break;
                         case 2:
                             System.out.println("Podaj pesel klienta, ktorego chcesz usunac");
-                            long pesel2= wprowadz.wypisz_long();
+                            String pesel2= wprowadz.wypisz_String();
                             for (int j=0;j< klienci.size();j++){
                                 if (klienci.get(j).getPesel()==pesel2){
                                     klienci.remove(j);
@@ -118,7 +118,7 @@ public class Main {
                             switch (opcja3){
                                 case 1:
                                     System.out.println("Podaj nr pesel klienta");
-                                    long pesel3= wprowadz.wypisz_long();
+                                    String pesel3= wprowadz.wypisz_String();
                                     for (int j=0;j< klienci.size();j++){
                                         if (klienci.get(j).getPesel()==pesel3){
                                             System.out.println(klienci.get(j).getPesel()+" "+klienci.get(j).getImie()+" "+klienci.get(j).getNazwisko());
@@ -446,7 +446,7 @@ public class Main {
                     switch (opcja8){
                         case 1:
                             System.out.println("Podaj pesel klienta");
-                            long pesel= wprowadz.wypisz_long();
+                            String pesel= wprowadz.wypisz_String();
                             System.out.println("Podaj rejestracje pojazdu");
                             String rejsetracja= wprowadz.wypisz_String();
                             System.out.println("Podaj okres wypozyczenia (dd-mm-rrrr)");

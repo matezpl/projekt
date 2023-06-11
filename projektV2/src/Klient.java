@@ -1,13 +1,13 @@
 public class Klient {
-    private long pesel;
+    private String pesel;
     private String imie;
     private String nazwisko;
 
-    public long getPesel() {
+    public String getPesel() {
         return pesel;
     }
 
-    public void setPesel(long pesel) {
+    public void setPesel(String pesel) {
         this.pesel = pesel;
     }
 
@@ -26,7 +26,7 @@ public class Klient {
     public void setNazwisko(String nazwisko) {
         this.nazwisko = nazwisko;
     }
-    public Klient(long pesel, String imie, String nazwisko){
+    public Klient(String pesel, String imie, String nazwisko){
         this.pesel = pesel;
         this.imie=imie;
         this.nazwisko=nazwisko;
