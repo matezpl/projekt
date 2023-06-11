@@ -3,17 +3,17 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Wypozyczenia {
-    private long klient_pesel;
+    private String klient_pesel;
     private String rejestracja_pojazdu;
     private Date okres;
     private int przebieg;
     private String stan;
 
-    public long getKlient_pesel() {
+    public String getKlient_pesel() {
         return klient_pesel;
     }
 
-    public void setKlient_pesel(long klient_pesel) {
+    public void setKlient_pesel(String klient_pesel) {
         this.klient_pesel = klient_pesel;
     }
 
@@ -53,7 +53,7 @@ public class Wypozyczenia {
         this.stan = stan;
     }
 
-    public Wypozyczenia(long klient_pesel, String rejestracja_pojazdu, Date okres, int przebieg, String stan) {
+    public Wypozyczenia(String klient_pesel, String rejestracja_pojazdu, Date okres, int przebieg, String stan) {
         this.klient_pesel = klient_pesel;
         this.rejestracja_pojazdu = rejestracja_pojazdu;
         this.okres = okres;
